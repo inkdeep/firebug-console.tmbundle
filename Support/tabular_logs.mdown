@@ -1,0 +1,121 @@
+![Simple preview of tabular log output.][1]  
+
+This table corresponds to the following code:  
+
+`var table = new Array(5);
+for (var i=0; i<table.length; i++)
+    table[i] = [i+1, i+2, i+3, i+4, i+5, i+6, i+7];
+console.table(table);`  
+
+![Expandable preview of tabular log output.][2]  
+
+Method Definition  
+=================
+
+The table method is defined as follows.
+
+`console.table(object[, columns]);`
+
+1. The object is expected to be an array of arrays (or array-like data structure like an array of objects)  
+2. The second optional parameter can be used to specify columns and/or properties to be logged.  
+
+If you prefer one-row log that displays the data after expanding (in order to save space in the console panel) 
+you can combine with _console.group()_ method and create **expandable group**.  
+
+`console.groupCollapsed("This is my table");
+console.table(table);
+console.groupEnd();`  
+
+The _console.table_ method doesn't support multiple arguments but you can log more tables by using it multiple times.    
+
+`console.groupCollapsed("This is my table");
+console.table(table);
+console.table(family);
+console.groupEnd();`
+
+Table-like Data
+===============
+
+The data structure doesn't always have to be a 2d array. In many cases devs deal with a list of objects that share 
+the same structure. Here is an example:  
+
+`function Person(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName  = lastName;
+    this.age       = age;
+}
+var family = {};
+family.mother   = new Person("Susan", "Doyle", 32);
+family.father   = new Person("John", "Doyle", 33);
+family.daughter = new Person("Lily", "Doyle", 5);
+family.son      = new Person("Mike", "Doyle", 8);  
+console.table(family);`
+
+![Tabular layout for list of objects.][3]  
+
+_Note that header names are generated according to object properties automatically.
+In order to log only specific properties, you can use following code._  
+
+`console.table(family, ["firstName", "lastName", "age"]);`   
+
+_In order to log only specific properties & specify custom labels, use following construct._  
+
+`var columns = [
+    {property:"firstName", label: "First Name"},
+    {property:"age", label: "Age"},
+];
+console.table(family, columns);`   
+
+![Tabular layout with custom columns.][4]  
+
+Complex Values
+==============
+
+So far, all values displayed within table cells were primitive types (numbers and 
+strings), but Firebug knows how to deal even with complex values. These can be 
+anything from objects, arrays, to JS functions or DOM elements. In these cases 
+Firebug uses standard representation of the actual type and places it into the cell.    
+
+`var table = new Array(3);
+for (var i=0; i<table.length; i++)
+    table[i] = [[i, i*2, i*4], {a: i, b: i*2, c: i*4}];
+console.table(table);`
+
+![Tabular layout with custom columns.][4]    
+
+_Objects are displayed as links that navigate the user to the DOM Panel for 
+detailed exploration._  
+
+Here is another example of an array with DOM elements and functions.  
+
+`var table = new Array(2);
+table[0] = [document.getElementById("testButton1"), onExecuteTest1];
+table[1] = [document.getElementById("testButton2"), onExecuteTest2];
+console.table(table);`  
+
+![Tabular layout with custom columns.][6]    
+
+_Again, DOM elements and functions are links that navigate the user to proper Firebug 
+panel for further inspection (HTML and Script in this case)._   
+
+Sorting
+=======
+
+Clicking at a column header sorts the column, second click switches sort direction (descendant, ascendant).  
+
+![Tabular layout with custom columns.][7]  
+
+
+There are two types of sorting, alphabetical and numerical. These are dynamically 
+applied according to the data type in the first row. The numerical sort is used if 
+**_typeof(first-row-cell-value) == "number"_**, otherwise alphabetical sort is used.  
+
+ 
+
+[1]: images/simple-tabular-log.png "Simple preview of tabular log output."
+[2]: images/expandable-tabular-log.png "Expandable preview of tabular log output."
+[3]: images/tabular-layout-for-list-of-objects.png "Tabular layout for list of objects."
+[4]: images/tabular-layout-with-custom-columns.png "Tabular layout with custom columns."
+[5]: images/console-table5.png "Tabular layout with custom columns."
+[6]: images/console-table6.png "Tabular layout with custom columns."
+[7]: images/console-table7.png "Tabular layout with custom columns."

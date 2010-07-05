@@ -1,0 +1,14 @@
+code, pre {
+  display: block;
+  background: #e8f0f8;
+  line-height: 1.7em;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  margin: 0px;
+}
+
+.uplink {
+  color: #333;
+  font-size: 0.9em;
+  line-height: 1.4em;
+}

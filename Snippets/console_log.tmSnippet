@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>console.log('${TM_FILENAME}:${TM_LINE_NUMBER}',$0);</string>
+	<key>name</key>
+	<string>console.log(object[, object, ...])</string>
+	<key>uuid</key>
+	<string>D5C604CC-9C57-4F86-9B5D-CAE24B67B13A</string>
+</dict>
+</plist>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>console.assert(typeof 1 == 'Numeric');</string>
+	<key>name</key>
+	<string>console.assert(expression)</string>
+	<key>uuid</key>
+	<string>3B839492-47DB-4F69-BDFF-483770717F31</string>
+</dict>
+</plist>

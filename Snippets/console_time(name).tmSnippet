@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>console.time($1);
+	${0:$TM_SELECTED_TEXT}
+console.timeEnd($1);</string>
+	<key>name</key>
+	<string>console.time(name)</string>
+	<key>uuid</key>
+	<string>B6A8B00D-041D-4149-AA50-250E916A04E6</string>
+</dict>
+</plist>

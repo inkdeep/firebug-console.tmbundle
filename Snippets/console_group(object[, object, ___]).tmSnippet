@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>console.group($0);
+	${1:$TM_SELECTED_TEXT}
+console.groupEnd();</string>
+	<key>name</key>
+	<string>console.group(object[, object, ...])</string>
+	<key>uuid</key>
+	<string>A597A900-0066-4CB5-980F-F286C41965F8</string>
+</dict>
+</plist>
