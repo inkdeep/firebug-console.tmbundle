@@ -8,6 +8,8 @@ Documentation of the console API commands. Original content here: http://getfire
 
 Documentation of console.table() command. Original article here: http://www.softwareishard.com/blog/firebug/tabular-logs-in-firebug/
 
+Use ⌥⌘K (option-command-k) to show a list of the most common logging commands to choose from.
+
 ## Installation
 
 To install with Git:
